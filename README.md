@@ -114,6 +114,125 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 
+<p>
+11. Click review + create and create again to build the 2nd virtual machine.
+</p>
+
+<p>
+12. Go to virtual machines, the 1st virtual machine (the machine running Windows Server/DC-1), go to networking, and go to the network interface.
+</p>
+
+<p>
+  <img width="961" alt="Screen Shot 2023-11-07 at 9 42 44 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/b018ff89-98e6-442b-82c5-47e9169d1755">
+</p>
+
+<p>
+13. Go to IP configurations and go to ipconfig1. (the Private IP address should currently show as dynamic)
+</p>
+
+<p>
+  <img width="747" alt="Screen Shot 2023-11-07 at 9 45 31 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/38aa627f-74f1-4c76-81d5-673ef7a28dc9">
+  <img width="1265" alt="Screen Shot 2023-11-07 at 9 47 09 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/2f856146-0281-4deb-90b3-ad53490125f3">
+</p>
+
+<p>
+14. Change the allocation from "dynamic" to "static", click save, and refresh the the virtual machine.
+</p>
+
+<p>
+  <img width="519" alt="Screen Shot 2023-11-07 at 9 52 05 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/55011ee6-c097-48cc-8be7-c49a1a03a5ca">
+</p>
+
+<p>
+15. Grab the public IP address of the 2nd virtual machine (Client-1) running Windows 10 Pro and open remote desktop. Input the IP address, username, and password to take control of the virtual machine.
+</p>
+
+<p>
+  <img width="920" alt="Screen Shot 2023-11-07 at 9 58 37 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/73ad9818-1d7a-4dbe-b6c7-73e7131d3f11">
+  <img width="453" alt="Screen Shot 2023-11-07 at 9 59 53 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/a99935cf-b9fa-4d48-9d0d-67022709019c">
+  <img width="662" alt="Screen Shot 2023-11-07 at 10 01 31 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/25d7140c-568c-4551-bec2-b54e957d6598">
+</p>
+
+
+<p>
+15. Grab the private IP address of the 1st virtual machine (DC-1) running Windows Server, open the command prompt on the 2nd virtual machine (Client-1), and ping the private IP address of the 1st virtual machine (DC-1). (the request will time out because the 1st virtual machine's (DC-1) firewall is blocking ICMP traffic)
+</p>
+
+<p>
+  <img width="1351" alt="Screen Shot 2023-11-07 at 10 09 21 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/9180650d-9d6d-46fb-b3f8-dfe109e6ef63">
+  
+  ![image](https://github.com/Gleejr/Configure-ad/assets/148407820/f238c677-7c5d-4ca6-af89-693c01da3877)
+</p>
+
+
+<p>
+16. Grab the public IP address for the 1st virutal machine (DC-1), open remote desktop, input the public IP adress, and the username and password to take coontrol of the 1st virtual machine.
+</p>
+
+<p>
+  <img width="1351" alt="Screen Shot 2023-11-07 at 10 14 17 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/6059021f-dae1-4c5e-b1e0-8467d0215f27">
+  <img width="662" alt="Screen Shot 2023-11-07 at 10 16 55 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/b77a73dc-3a49-414f-bf9a-f5b6462d3765">
+</p>
+
+
+<p>
+17. Go to start and type in "wf.msc".
+</p>
+
+<p>
+  <img width="1440" alt="Screen Shot 2023-11-07 at 10 20 07 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/22eecde0-4a92-4ad2-8dd0-7e9ca9390411">
+</p>
+
+<p>
+17. Go to inbound rules, select protocol, and find ICMPv4
+</p>
+
+<p>
+  <img width="1440" alt="Screen Shot 2023-11-07 at 10 23 23 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/aceab3bc-efcf-4265-90cf-fff8829f6140">
+</p>
+
+
+<p>
+18. Enable the 1st two ICMP Echo Request. Switch back to the 2nd Virtual machine (Client-1) and the request will now go through successfully and receive replies back.
+</p>
+
+<p>
+  <img width="1136" alt="Screen Shot 2023-11-07 at 10 26 49 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ec7075c8-ac7b-4325-86c9-778936e563bd">
+  <img width="990" alt="Screen Shot 2023-11-07 at 10 30 14 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/fd1dda9a-3a77-4ba0-89fd-be49c9c14025">
+</p>
+
+
+<p>
+19. Switch back to the 1st virtual machine (DC-1), open up serber manager, and go to "add roles and features".
+</p>
+
+<p>
+  <img width="1440" alt="Screen Shot 2023-11-07 at 10 35 15 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/efca79ef-d555-4afc-ab39-3c08d52c81ec">
+</p>
+
+<p>
+20. Keep selecting next, select "Active Directory Domain Services", and select "add features".
+</p>
+
+<p>
+  <img width="1440" alt="Screen Shot 2023-11-07 at 10 38 05 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/90ad805a-ccc4-4a18-b339-e884717b3185">
+  <img width="414" alt="Screen Shot 2023-11-07 at 10 39 29 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/bc3c4ca5-d132-4835-a4aa-5b53554b9b12">
+
+</p>
+
+<p>
+21. Keep clicking next until install shows at the bottom and then once it has installed select close.
+</p>
+
+<p>
+  <img width="791" alt="Screen Shot 2023-11-07 at 10 42 16 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ec07fee3-5c52-4e9f-a7a9-672744aaf077">
+  <img width="788" alt="Screen Shot 2023-11-07 at 10 45 20 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/58e1ff7b-6546-4050-96a1-e4ddec9ee07e">
+</p>
+
+
+
+
+
 
 
 
