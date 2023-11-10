@@ -230,6 +230,105 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 
+<p>
+22. In top right corner (the notification tab), click the flag and then click "promote this server to domain controller".
+</p>
+
+<p>
+  <img width="1265" alt="Screen Shot 2023-11-09 at 10 20 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/89d5ac2b-0699-431d-a450-425b0eab8ca6">
+</p>
+
+
+<p>
+23. Select add a new forest, enter a root domain name (example: mydomain.com), and click next.
+</p>
+
+<p>
+ <img width="808" alt="Screen Shot 2023-11-09 at 10 24 44 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/da748968-b741-48d1-8530-9bbf4d2d755a">
+</p>
+
+
+<p>
+24. Create a password (Example Password1234) and keep clicking next. Once intall populates click install.
+</p>
+
+<p>
+  <img width="775" alt="Screen Shot 2023-11-09 at 10 29 15 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/4de1c2b0-91e4-42c2-8fc3-24ee1b4c11a4">
+  <img width="775" alt="Screen Shot 2023-11-09 at 10 38 45 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/108fcfa8-413e-4cc3-8e31-5dfa8ee9687d">
+</p>
+
+
+<p>
+25. The virtual machine will restart. Open remote desktop and reconnect to the 1st virtual machine (DC-1).
+</p>
+
+<p>
+ <img width="1440" alt="Screen Shot 2023-11-09 at 10 42 17 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/482bb603-0d3f-4d3b-9481-9fb44cf38c7a">
+</p>
+
+
+<p>
+26. The 1st virtual machine (DC-1) is now a domain controller. Enter the root domain name and the password for the 1st virtual machine (DC-1). (example username: mydomain.com\labuser)
+</p>
+
+<p>
+<img width="662" alt="Screen Shot 2023-11-09 at 10 52 54 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/bfa99078-101d-42f9-8255-848ec2f09f8e">
+</p>
+
+<p>
+27. Click on tools and select "Active Directory Users and Computers"
+</p>
+
+<p>
+<img width="1440" alt="Screen Shot 2023-11-09 at 10 57 44 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/83eaa07e-7797-4e6c-9e6e-3877c0b6b31f">
+</p>
+
+
+<p>
+28. Under "mydomain.com", create two organizational units "_Employees" and "_ADMINS". 
+</p>
+
+<p>
+<img width="943" alt="Screen Shot 2023-11-09 at 11 01 31 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ddb463a9-8733-4687-9108-a13198ce2496">
+<img width="755" alt="Screen Shot 2023-11-09 at 11 08 58 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/f9e67d12-4611-481a-8165-2469ed20c023">
+</p>
+
+<p>
+29. In admin, right click and select "new" and "users".
+</p>
+
+<p>
+<img width="765" alt="Screen Shot 2023-11-09 at 11 11 48 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/bbeb356c-d371-4863-b9d6-d7a9f346136c">
+</p>
+
+<p>
+30. Enter a name for the user and a user login (example name: jane doe, user login: jane_admin). Create a password and only check "password never expires". Click next and finish.
+</p>
+
+<p>
+<img width="437" alt="Screen Shot 2023-11-09 at 11 15 24 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/53c8c62a-6686-4735-853d-f5b9d5566c1f">
+<img width="444" alt="Screen Shot 2023-11-09 at 11 17 41 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/c2d2c39a-6d98-4713-bc9d-c03d6fd61246">
+</p>
+
+<p>
+30. Right click on the user that was created in the previous step and select properties. Go to "member of" and click add.
+</p>
+
+<p>
+<img width="753" alt="Screen Shot 2023-11-09 at 11 21 44 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/55dba63a-6f55-4f91-9586-92c37f7bc1ed">
+<img width="410" alt="Screen Shot 2023-11-09 at 11 22 45 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/a36ce2b6-574d-4b42-8236-aee9008d4cfa">
+</p>
+
+<p>
+31. Enter "domain" and click on check names. Select domain admins and click on OK. Click on OK again, click on apply, and OK.
+</p>
+
+<p>
+<img width="765" alt="Screen Shot 2023-11-09 at 11 11 48 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/bbeb356c-d371-4863-b9d6-d7a9f346136c">
+</p>
+
+
+
 
 
 
