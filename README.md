@@ -353,11 +353,77 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-34. Change inherit from virtual network to custom. Enter the private IP address for the 1st virtual machine (DC-1) and click save. Restart the 2nd virtual machine (Client-1).
+34. Change "inherit from virtual network" to "custom". Enter the private IP address for the 1st virtual machine (DC-1) and click save. Restart the 2nd virtual machine (Client-1).
 
 <p>
-<img width="1053" alt="Screen Shot 2023-11-09 at 11 46 45 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ae9ba5e9-972e-459c-817a-47cae6d82b64">
+<img width="1054" alt="Screen Shot 2023-11-09 at 11 55 57 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/188f614a-8b31-4d10-84e7-a1683624a2f6">
 <img width="1054" alt="Screen Shot 2023-11-09 at 11 59 27 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/e7841bea-dd8d-498e-9a3b-09e309852b9f">
+</p>
+
+
+<p>
+35. Log back into the 2nd virtual machine (Client-1) and open the command prompt. Type in "ipconfig /all" and the DNS server will be the same as the private IP address of the 1st virtual machine (DC-1).
+
+<p>
+<img width="984" alt="Screen Shot 2023-11-10 at 9 56 01 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/a74cbbd0-2dd7-4da3-917b-56c33a304a97">
+</p>
+
+
+<p>
+36. In the start menu, go to settings, and go to "rename this PC(advanced)".
+<p>
+<img width="1440" alt="Screen Shot 2023-11-10 at 10 04 11 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/a90d634a-4d31-4f25-826d-e449ce64f980">
+</p>
+
+
+<p>
+37. Under system properties select change, under member of select domain and enter mydomain.com, and enter the login for the admin that was created earlier. (Example jane_admin)
+<p>
+<img width="405" alt="Screen Shot 2023-11-10 at 10 08 11 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ba19c3e7-cea0-44a5-a9e9-1ff117586e66">
+<img width="334" alt="Screen Shot 2023-11-10 at 10 10 28 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ca4fcae2-f03d-4e4f-a815-de8054df3204">
+<img width="456" alt="Screen Shot 2023-11-10 at 10 11 29 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/8ac447d7-ddce-4bf8-be03-4b0b19c31ee9">
+</p>
+
+
+<p>
+38. A message will pop up showing that it was a success. Restart the 2nd virtual machine (Client-1) and log in as the jane_admin.
+<p>
+<img width="309" alt="Screen Shot 2023-11-10 at 10 17 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/6e2bc3ee-e3d3-44a7-bf9b-2d3411de9585">
+</p>
+
+<p>
+39. Go to system, go to remote desktop, and click on "select users that can remotely access this pc"
+<p>
+<img width="1440" alt="Screen Shot 2023-11-10 at 10 27 42 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/623416fa-6510-4e49-8a51-72ffe1312485">
+<img width="1440" alt="Screen Shot 2023-11-10 at 10 30 41 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/d31019fc-ef4d-466d-8f40-4c5472f8cda7">
+</p>
+
+<p>
+39. Click on add, Type in "domain users", click on check names. Click on OK and OK again.
+<p>
+<img width="472" alt="Screen Shot 2023-11-10 at 10 36 08 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/b13cb4bd-a23c-4813-8224-0aba2b71aeeb">
+</p>
+
+<p>
+40. Switch back to the 1st virtual machine (DC-1), open up windows powershell ISE, and run it as an administrator. 
+<p>
+<img width="1440" alt="Screen Shot 2023-11-10 at 10 49 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/dd82d30e-b510-4ab6-a27f-8edaa0890197">
+</p>
+
+<p>
+41. Click on new script, input a script (the script will create many user that can be tested to login into Client-1) and select execute.
+<p>
+<img width="1440" alt="Screen Shot 2023-11-10 at 10 51 03 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ee90a70d-edcd-4b09-9720-c855153a06e9">
+<img width="1440" alt="Screen Shot 2023-11-10 at 10 55 40 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/534398b8-5cf5-466d-92a3-1efbf5e611a1">
+</p>
+
+
+<p>
+41. Go back to Active Directory Users and Computers, go to _EMPLOYEES, and grab a random employee's name that was generated. Switch back to the 2nd virtual machine (Client-1) and login as the employee.
+<p>
+<img width="964" alt="Screen Shot 2023-11-10 at 11 06 54 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/3c34c3ae-22d6-4d73-b699-11ee38a181a3">
+<img width="662" alt="Screen Shot 2023-11-10 at 11 10 58 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/b09ab25f-f7c7-42f4-ac6f-eda8862b5a22">
+<img width="997" alt="Screen Shot 2023-11-10 at 11 12 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/f71e022a-f5d6-4f0b-adae-2378fdaad13e">
 </p>
 
 
