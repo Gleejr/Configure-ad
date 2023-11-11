@@ -320,17 +320,45 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-31. Enter "domain" and click on check names. Select domain admins and click on OK. Click on OK again, click on apply, and OK.
+31. Enter "domain" and click on check names. Select domain admins and click on OK. Click on OK again, click on apply, and click on OK.
 </p>
 
 <p>
-<img width="765" alt="Screen Shot 2023-11-09 at 11 11 48 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/bbeb356c-d371-4863-b9d6-d7a9f346136c">
+<img width="743" alt="Screen Shot 2023-11-09 at 11 27 43 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/53e33f63-20b9-44a1-a65d-c4008188687e">
+<img width="756" alt="Screen Shot 2023-11-09 at 11 28 37 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/2c03de18-528c-4cc8-964f-97a533cebd05">
+</p>
+
+<p>
+32. Sign out of the 1st virtual machine (DC-1) and log back in as jane_admin. (example: mydomain.com\jane_admin)
+</p>
+
+<p>
+<img width="662" alt="Screen Shot 2023-11-09 at 11 38 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/8f186d43-a93d-4405-ae22-49d9a4d624f8">
+</p>
+
+<p>
+32. Go to the 1st virtual machine (DC-1) on Azure, networking, and copy the NIC private IP addreess.
+
+<p>
+<img width="1053" alt="Screen Shot 2023-11-09 at 11 46 45 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ae9ba5e9-972e-459c-817a-47cae6d82b64">
 </p>
 
 
+<p>
+33. Go to the 2nd virtual machine (Client-1) on Azure, clickn on networking, click on network interface, and click on DNS server. 
 
+<p>
+<img width="1054" alt="Screen Shot 2023-11-09 at 11 50 08 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/2e5a274b-a4bf-4576-9159-018a635a04e0">
+<img width="1054" alt="Screen Shot 2023-11-09 at 11 52 48 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/244eace2-a23f-4872-9c01-2b4d9e9d44f7">
+</p>
 
+<p>
+34. Change inherit from virtual network to custom. Enter the private IP address for the 1st virtual machine (DC-1) and click save. Restart the 2nd virtual machine (Client-1).
 
+<p>
+<img width="1053" alt="Screen Shot 2023-11-09 at 11 46 45 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ae9ba5e9-972e-459c-817a-47cae6d82b64">
+<img width="1054" alt="Screen Shot 2023-11-09 at 11 59 27 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/e7841bea-dd8d-498e-9a3b-09e309852b9f">
+</p>
 
 
 
