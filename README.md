@@ -8,7 +8,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Video Demonstration</h2>
 
-- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com)
+- ### [YouTube: How to Deploy on-premises Active Directory within Azure Compute](https://www.youtube.com/watch?v=lzHRxxSmQXc)
 
 <h2>Environments and Technologies Used</h2>
 
@@ -23,6 +23,8 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Windows 10 (21H2)
 
 <h2>Deployment and Configuration Steps</h2>
+
+<h3>Setup Resources in Azure</h3>
 
 <p>
 1. In the Azure portal, type in resource groups in the seach bar above and click on resource groups.
@@ -154,6 +156,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 
+
+
+<h3>Ensure Connectivity between the client and Domain Controller</h3>
+
 <p>
 15. Grab the private IP address of the 1st virtual machine (DC-1) running Windows Server, open the command prompt on the 2nd virtual machine (Client-1), and ping the private IP address of the 1st virtual machine (DC-1). (the request will time out because the 1st virtual machine's (DC-1) firewall is blocking ICMP traffic)
 </p>
@@ -202,8 +208,11 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 
+
+<h3>Install Active Directory</h3>
+
 <p>
-19. Switch back to the 1st virtual machine (DC-1), open up serber manager, and go to "add roles and features".
+19. Switch back to the 1st virtual machine (DC-1), open up server manager, and go to "add roles and features".
 </p>
 
 <p>
@@ -275,6 +284,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img width="662" alt="Screen Shot 2023-11-09 at 10 52 54 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/bfa99078-101d-42f9-8255-848ec2f09f8e">
 </p>
 
+
+
+<h3>Create an Admin and Normal User Account in AD</h3>
+
 <p>
 27. Click on tools and select "Active Directory Users and Computers"
 </p>
@@ -336,6 +349,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img width="662" alt="Screen Shot 2023-11-09 at 11 38 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/8f186d43-a93d-4405-ae22-49d9a4d624f8">
 </p>
 
+
+
+<h3>Join Client-1 to your domain (mydomain.com)</h3>
+
 <p>
 32. Go to the 1st virtual machine (DC-1) on Azure, networking, and copy the NIC private IP addreess.
 
@@ -391,6 +408,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img width="309" alt="Screen Shot 2023-11-10 at 10 17 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/6e2bc3ee-e3d3-44a7-bf9b-2d3411de9585">
 </p>
 
+
+
+<h3>Setup Remote Desktop for non-administrative users on Client-1</h3>
+
 <p>
 39. Go to system, go to remote desktop, and click on "select users that can remotely access this pc"
 <p>
@@ -403,6 +424,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <p>
 <img width="472" alt="Screen Shot 2023-11-10 at 10 36 08 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/b13cb4bd-a23c-4813-8224-0aba2b71aeeb">
 </p>
+
+
+
+<h3>Create a alot of additional users and attempt to log into client-1 with one of the users</h3>
 
 <p>
 40. Switch back to the 1st virtual machine (DC-1), open up windows powershell ISE, and run it as an administrator. 
@@ -425,9 +450,6 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img width="662" alt="Screen Shot 2023-11-10 at 11 10 58 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/b09ab25f-f7c7-42f4-ac6f-eda8862b5a22">
 <img width="997" alt="Screen Shot 2023-11-10 at 11 12 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/f71e022a-f5d6-4f0b-adae-2378fdaad13e">
 </p>
-
-
-
 
 
 <br />
