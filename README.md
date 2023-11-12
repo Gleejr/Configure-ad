@@ -161,7 +161,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h3>Ensure Connectivity between the client and Domain Controller</h3>
 
 <p>
-15. Grab the private IP address of the 1st virtual machine (DC-1) running Windows Server, open the command prompt on the 2nd virtual machine (Client-1), and ping the private IP address of the 1st virtual machine (DC-1). (the request will time out because the 1st virtual machine's (DC-1) firewall is blocking ICMP traffic)
+16. Grab the private IP address of the 1st virtual machine (DC-1) running Windows Server, open the command prompt on the 2nd virtual machine (Client-1), and ping the private IP address of the 1st virtual machine (DC-1). (the request will time out because the 1st virtual machine's (DC-1) firewall is blocking ICMP traffic)
 </p>
 
 <p>
@@ -172,7 +172,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-16. Grab the public IP address for the 1st virutal machine (DC-1), open remote desktop, input the public IP adress, and the username and password to take coontrol of the 1st virtual machine.
+17. Grab the public IP address for the 1st virutal machine (DC-1), open remote desktop, input the public IP adress, and the username and password to take coontrol of the 1st virtual machine.
 </p>
 
 <p>
@@ -182,7 +182,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-17. Go to start and type in "wf.msc".
+18. Go to start and type in "wf.msc".
 </p>
 
 <p>
@@ -190,7 +190,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-17. Go to inbound rules, select protocol, and find ICMPv4
+19. Go to inbound rules, select protocol, and find ICMPv4
 </p>
 
 <p>
@@ -199,7 +199,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-18. Enable the 1st two ICMP Echo Request. Switch back to the 2nd Virtual machine (Client-1) and the request will now go through successfully and receive replies back.
+20. Enable the 1st two ICMP Echo Request. Switch back to the 2nd Virtual machine (Client-1) and the request will now go through successfully and receive replies back.
 </p>
 
 <p>
@@ -212,7 +212,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h3>Install Active Directory</h3>
 
 <p>
-19. Switch back to the 1st virtual machine (DC-1), open up server manager, and go to "add roles and features".
+21. Switch back to the 1st virtual machine (DC-1), open up server manager, and go to "add roles and features".
 </p>
 
 <p>
@@ -220,7 +220,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-20. Keep selecting next, select "Active Directory Domain Services", and select "add features".
+22. Keep selecting next, select "Active Directory Domain Services", and select "add features".
 </p>
 
 <p>
@@ -230,7 +230,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-21. Keep clicking next until install shows at the bottom and then once it has installed select close.
+23. Keep clicking next until install shows at the bottom and then once it has installed select close.
 </p>
 
 <p>
@@ -240,7 +240,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-22. In top right corner (the notification tab), click the flag and then click "promote this server to domain controller".
+24. In top right corner (the notification tab), click the flag and then click "promote this server to domain controller".
 </p>
 
 <p>
@@ -249,7 +249,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-23. Select add a new forest, enter a root domain name (example: mydomain.com), and click next.
+25. Select add a new forest, enter a root domain name (example: mydomain.com), and click next.
 </p>
 
 <p>
@@ -258,7 +258,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-24. Create a password (Example Password1234) and keep clicking next. Once intall populates click install.
+26. Create a password (Example Password1234) and keep clicking next. Once intall populates click install.
 </p>
 
 <p>
@@ -268,7 +268,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-25. The virtual machine will restart. Open remote desktop and reconnect to the 1st virtual machine (DC-1).
+27. The virtual machine will restart. Open remote desktop and reconnect to the 1st virtual machine (DC-1).
 </p>
 
 <p>
@@ -277,7 +277,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-26. The 1st virtual machine (DC-1) is now a domain controller. Enter the root domain name and the password for the 1st virtual machine (DC-1). (example username: mydomain.com\labuser)
+28. The 1st virtual machine (DC-1) is now a domain controller. Enter the root domain name and the password for the 1st virtual machine (DC-1). (example username: mydomain.com\labuser)
 </p>
 
 <p>
@@ -289,7 +289,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h3>Create an Admin and Normal User Account in AD</h3>
 
 <p>
-27. Click on tools and select "Active Directory Users and Computers"
+29. Click on tools and select "Active Directory Users and Computers"
 </p>
 
 <p>
@@ -298,7 +298,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-28. Under "mydomain.com", create two organizational units "_Employees" and "_ADMINS". 
+30. Under "mydomain.com", create two organizational units "_Employees" and "_ADMINS". 
 </p>
 
 <p>
@@ -307,7 +307,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-29. In admin, right click and select "new" and "users".
+31. In admin, right click and select "new" and "users".
 </p>
 
 <p>
@@ -315,7 +315,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-30. Enter a name for the user and a user login (example name: jane doe, user login: jane_admin). Create a password and only check "password never expires". Click next and finish.
+32. Enter a name for the user and a user login (example name: jane doe, user login: jane_admin). Create a password and only check "password never expires". Click next and finish.
 </p>
 
 <p>
@@ -324,7 +324,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-30. Right click on the user that was created in the previous step and select properties. Go to "member of" and click add.
+33. Right click on the user that was created in the previous step and select properties. Go to "member of" and click add.
 </p>
 
 <p>
@@ -333,7 +333,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-31. Enter "domain" and click on check names. Select domain admins and click on OK. Click on OK again, click on apply, and click on OK.
+34. Enter "domain" and click on check names. Select domain admins and click on OK. Click on OK again, click on apply, and click on OK.
 </p>
 
 <p>
@@ -342,7 +342,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-32. Sign out of the 1st virtual machine (DC-1) and log back in as jane_admin. (example: mydomain.com\jane_admin)
+35. Sign out of the 1st virtual machine (DC-1) and log back in as jane_admin. (example: mydomain.com\jane_admin)
 </p>
 
 <p>
@@ -354,7 +354,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h3>Join Client-1 to your domain (mydomain.com)</h3>
 
 <p>
-32. Go to the 1st virtual machine (DC-1) on Azure, networking, and copy the NIC private IP addreess.
+36. Go to the 1st virtual machine (DC-1) on Azure, networking, and copy the NIC private IP addreess.
 
 <p>
 <img width="1053" alt="Screen Shot 2023-11-09 at 11 46 45 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ae9ba5e9-972e-459c-817a-47cae6d82b64">
@@ -362,7 +362,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-33. Go to the 2nd virtual machine (Client-1) on Azure, clickn on networking, click on network interface, and click on DNS server. 
+37. Go to the 2nd virtual machine (Client-1) on Azure, clickn on networking, click on network interface, and click on DNS server. 
 
 <p>
 <img width="1054" alt="Screen Shot 2023-11-09 at 11 50 08 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/2e5a274b-a4bf-4576-9159-018a635a04e0">
@@ -370,7 +370,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 
 <p>
-34. Change "inherit from virtual network" to "custom". Enter the private IP address for the 1st virtual machine (DC-1) and click save. Restart the 2nd virtual machine (Client-1).
+38. Change "inherit from virtual network" to "custom". Enter the private IP address for the 1st virtual machine (DC-1) and click save. Restart the 2nd virtual machine (Client-1).
 
 <p>
 <img width="1054" alt="Screen Shot 2023-11-09 at 11 55 57 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/188f614a-8b31-4d10-84e7-a1683624a2f6">
@@ -379,7 +379,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-35. Log back into the 2nd virtual machine (Client-1) and open the command prompt. Type in "ipconfig /all" and the DNS server will be the same as the private IP address of the 1st virtual machine (DC-1).
+39. Log back into the 2nd virtual machine (Client-1) and open the command prompt. Type in "ipconfig /all" and the DNS server will be the same as the private IP address of the 1st virtual machine (DC-1).
 
 <p>
 <img width="984" alt="Screen Shot 2023-11-10 at 9 56 01 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/a74cbbd0-2dd7-4da3-917b-56c33a304a97">
@@ -387,14 +387,14 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-36. In the start menu, go to settings, and go to "rename this PC(advanced)".
+40. In the start menu, go to settings, and go to "rename this PC(advanced)".
 <p>
 <img width="1440" alt="Screen Shot 2023-11-10 at 10 04 11 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/a90d634a-4d31-4f25-826d-e449ce64f980">
 </p>
 
 
 <p>
-37. Under system properties select change, under member of select domain and enter mydomain.com, and enter the login for the admin that was created earlier. (Example jane_admin)
+41. Under system properties select change, under member of select domain and enter mydomain.com, and enter the login for the admin that was created earlier. (Example jane_admin)
 <p>
 <img width="405" alt="Screen Shot 2023-11-10 at 10 08 11 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ba19c3e7-cea0-44a5-a9e9-1ff117586e66">
 <img width="334" alt="Screen Shot 2023-11-10 at 10 10 28 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ca4fcae2-f03d-4e4f-a815-de8054df3204">
@@ -403,7 +403,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-38. A message will pop up showing that it was a success. Restart the 2nd virtual machine (Client-1) and log in as the jane_admin.
+42. A message will pop up showing that it was a success. Restart the 2nd virtual machine (Client-1) and log in as the jane_admin.
 <p>
 <img width="309" alt="Screen Shot 2023-11-10 at 10 17 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/6e2bc3ee-e3d3-44a7-bf9b-2d3411de9585">
 </p>
@@ -413,14 +413,14 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h3>Setup Remote Desktop for non-administrative users on Client-1</h3>
 
 <p>
-39. Go to system, go to remote desktop, and click on "select users that can remotely access this pc"
+43. Go to system, go to remote desktop, and click on "select users that can remotely access this pc"
 <p>
 <img width="1440" alt="Screen Shot 2023-11-10 at 10 27 42 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/623416fa-6510-4e49-8a51-72ffe1312485">
 <img width="1440" alt="Screen Shot 2023-11-10 at 10 30 41 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/d31019fc-ef4d-466d-8f40-4c5472f8cda7">
 </p>
 
 <p>
-39. Click on add, Type in "domain users", click on check names. Click on OK and OK again.
+44. Click on add, Type in "domain users", click on check names. Click on OK and OK again.
 <p>
 <img width="472" alt="Screen Shot 2023-11-10 at 10 36 08 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/b13cb4bd-a23c-4813-8224-0aba2b71aeeb">
 </p>
@@ -430,13 +430,13 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h3>Create a alot of additional users and attempt to log into client-1 with one of the users</h3>
 
 <p>
-40. Switch back to the 1st virtual machine (DC-1), open up windows powershell ISE, and run it as an administrator. 
+45. Switch back to the 1st virtual machine (DC-1), open up windows powershell ISE, and run it as an administrator. 
 <p>
 <img width="1440" alt="Screen Shot 2023-11-10 at 10 49 13 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/dd82d30e-b510-4ab6-a27f-8edaa0890197">
 </p>
 
 <p>
-41. Click on new script, input a script (the script will create many user that can be tested to login into Client-1) and select execute.
+46. Click on new script, input a script (the script will create many user that can be tested to login into Client-1) and select execute.
 <p>
 <img width="1440" alt="Screen Shot 2023-11-10 at 10 51 03 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/ee90a70d-edcd-4b09-9720-c855153a06e9">
 <img width="1440" alt="Screen Shot 2023-11-10 at 10 55 40 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/534398b8-5cf5-466d-92a3-1efbf5e611a1">
@@ -444,7 +444,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 
 <p>
-41. Go back to Active Directory Users and Computers, go to _EMPLOYEES, and grab a random employee's name that was generated. Switch back to the 2nd virtual machine (Client-1) and login as the employee.
+47. Go back to Active Directory Users and Computers, go to _EMPLOYEES, and grab a random employee's name that was generated. Switch back to the 2nd virtual machine (Client-1) and login as the employee.
 <p>
 <img width="964" alt="Screen Shot 2023-11-10 at 11 06 54 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/3c34c3ae-22d6-4d73-b699-11ee38a181a3">
 <img width="662" alt="Screen Shot 2023-11-10 at 11 10 58 PM" src="https://github.com/Gleejr/Configure-ad/assets/148407820/b09ab25f-f7c7-42f4-ac6f-eda8862b5a22">
